@@ -12,15 +12,16 @@ public class GraphsDraculaWeightedParser<N extends AbstractNode, E extends Abstr
 	public GraphsDraculaWeightedParser() {}
 	
 	//XXX OVERRIDE METHODS
+	
 	@Override
-	protected String generateAddEdgeStr(E edge, String graphWidgetVar, boolean isGraphDirected, boolean isGraphWeighted) {
+	protected String generateAddEdgeStr(E edge, String htmlElementContainer, String graphWidgetVar, boolean isGraphDirected, boolean isGraphWeighted) {
 		//abstraction take care of un\direction
 		
 		String sourceNode = edge.getSource().getLabel();
 		String targetNode = edge.getTarget().getLabel();
 		BigDecimal edgeWeight = edge.getWeight();
 		
-		String addEdgeStr = graphWidgetVar + ".addEdge('" + sourceNode + "','" + targetNode + "','" + "{label : '" + edgeWeight + "'});\n";
+		String addEdgeStr = graphWidgetVar + ".addEdge('" + sourceNode + "','" + targetNode + "'," + "{label : '" + edgeWeight + "'});\n";
 		return addEdgeStr;
 	}
 	

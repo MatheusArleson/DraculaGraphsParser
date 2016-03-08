@@ -10,8 +10,9 @@ public class GraphsDraculaUnweightedParser<N extends AbstractNode, E extends Abs
 	public GraphsDraculaUnweightedParser() {}
 	
 	//XXX OVERRIDE METHODS
+	
 	@Override
-	protected String generateAddEdgeStr(E edge, String graphWidgetVar, boolean isGraphDirected, boolean isGraphWeighted) {
+	protected String generateAddEdgeStr(E edge, String htmlElementContainer, String graphWidgetVar, boolean isGraphDirected, boolean isGraphWeighted) {
 		//abstraction take care of un\direction
 		
 		String sourceNode = edge.getSource().getLabel();
